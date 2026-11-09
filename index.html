@@ -110,20 +110,24 @@ $("a1").innerHTML=calf(78);$("a2").innerHTML=goat(78);
 function snd(f,d){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();var o=ac.createOscillator(),g=ac.createGain();o.frequency.value=f;g.gain.value=.12;o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch(e){}}
 function boom(em){for(var k=0;k<24;k++){var s=document.createElement("span");s.className="cf";s.textContent=em[k%em.length];s.style.left=(Math.random()*96)+"vw";s.style.animationDelay=(Math.random()*.5)+"s";document.body.appendChild(s);setTimeout(function(x){x.remove()},2600,s)}}
 function start(){
- m.innerHTML='<div class="card c"><div class="hero">'+calf(130)+goat(130)+'</div><div class="fr">🍎🍊🍓🍌🍇</div><div class="q">Cùng ôn bài “Gọi bạn” nào!</div><p class="meta" style="font-size:clamp(18px,3vh,30px);margin:0">☝️ 1 ngón = <b>A</b> · ✌️ 2 ngón = <b>B</b> · 🤟 3 ngón = <b>C</b></p><p class="meta" style="margin:0">Bấm “Bật camera” ở khung bên cạnh trước khi bắt đầu · 22 câu · mỗi lượt một bạn giơ 1 tay, chỉ 1–3 ngón là hợp lệ · đúng 100 điểm + thưởng tốc độ tối đa 50 · '+TL+' giây/câu</p><div class="act"><button class="big" onclick="snd(660,.15);next()">▶ Bắt đầu</button></div></div>';
+ m.innerHTML='<div class="card c"><div class="hero">'+calf(130)+goat(130)+'</div><div class="fr">🍎🍊🍓🍌🍇</div><div class="q">Cùng ôn bài “Gọi bạn” nào!</div><p class="meta" style="font-size:clamp(18px,3vh,30px);margin:0">☝️ 1 ngón = <b>A</b> · ✌️ 2 ngón = <b>B</b> · 🤟 3 ngón = <b>C</b></p><p class="meta" style="margin:0">Bấm “Bật camera” ở khung bên cạnh trước khi bắt đầu · 22 câu · mỗi lượt một bạn giơ 1 tay, chỉ 1–3 ngón là hợp lệ · đúng 100 điểm + thưởng tốc độ tối đa 50 · '+TL+' giây/câu · tự chuyển câu mới sau mỗi lượt</p><div class="act"><button class="big" onclick="snd(660,.15);next()">▶ Bắt đầu</button></div></div>';
 }
 function next(){
- i++;if(i>=Q.length){return end()}
+ clearInterval(aT);i++;if(i>=Q.length){return end()}
  ch=[null,null];tt=[0,0];rev=false;run=true;t0=Date.now();wait=[true,true];
  var q=Q[i],rep=Math.ceil((i+1)/2);
  $("no").textContent="Câu "+(i+1)+"/22";
  var h='<div class="card qcard"><span class="badge">⭐ Lượt của bạn số '+rep+'</span><div class="q">'+q[0]+'</div><div class="opts">';
  for(var k=0;k<3;k++)h+='<div class="opt c'+k+'" id="o'+k+'"><div class="bd"><i>'+A[k][0]+'</i><small>'+"ABC".charAt(k)+' · '+A[k][1]+'</small></div><span>'+q[1][k]+'</span></div>';
- h+='</div></div><div class="act"><button class="alt" id="rv" onclick="reveal()">👀 Hiện đáp án</button><button id="nx" class="big" style="display:none" onclick="next()">'+(i==Q.length-1?"🏆 Xem kết quả":"Câu tiếp theo ▶")+'</button></div>';
+ h+='</div></div><div class="act"><button class="alt" id="rv" onclick="reveal()">👀 Hiện đáp án</button><button id="nx" class="big" style="display:none" onclick="next()">'+(i==Q.length-1?"🏆 Xem kết quả":"Câu tiếp theo ▶")+'</button><button class="alt" id="pz" style="display:none" onclick="pauseAuto()">⏸ Dừng tự chuyển</button></div>';
  m.innerHTML=h;
  for(var t=0;t<2;t++){$("st"+t).textContent="";$("rs"+t).disabled=false;for(var j=0;j<3;j++){$("b"+t+j).disabled=false;$("b"+t+j).className=""}}
  clearInterval(iv);iv=setInterval(tick,100);tick();
 }
+var AU=5,aT=null;
+function nxLbl(){return i==Q.length-1?"🏆 Xem kết quả":"Câu tiếp theo ▶"}
+function autoGo(){clearInterval(aT);var n=AU,b=$("nx");b.textContent=nxLbl()+" ("+n+")";aT=setInterval(function(){n--;if(n<=0){clearInterval(aT);next()}else b.textContent=nxLbl()+" ("+n+")"},1000)}
+function pauseAuto(){clearInterval(aT);$("nx").textContent=nxLbl();$("pz").style.display="none"}
 function tick(){
  if(!run)return;var l=Math.max(0,TL-(Date.now()-t0)/1000);
  clk.textContent=Math.ceil(l);rg.style.setProperty("--p",l/TL*100);rg.className="ring"+(l<=8?" lo":"");
@@ -156,7 +160,7 @@ function reveal(){
   sc[t]+=g;var e=$("s"+(t+1));e.textContent=sc[t];if(g){e.classList.remove("pop");void e.offsetWidth;e.classList.add("pop")}
  }
  if(any){snd(880,.15);setTimeout(function(){snd(1175,.25)},160);boom(["⭐","🎈","🌸","🍓","🎉"])}else snd(200,.3);
- $("rv").style.display="none";$("nx").style.display="inline-block";
+ $("rv").style.display="none";$("nx").style.display="inline-block";$("pz").style.display="inline-block";autoGo();
 }
 function end(){
  clk.textContent="🏁";rg.style.setProperty("--p",100);

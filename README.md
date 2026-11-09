@@ -28,3 +28,6 @@ Mở `index.html`, tìm mảng `Q`. Mỗi câu có dạng:
 - Giữ yên khoảng 0,8 giây để máy chốt. Cuối mỗi câu cần hạ tay xuống trước khi sang câu mới.
 - Lần đầu cần mạng để tải bộ nhận diện (MediaPipe) từ jsdelivr.net và storage.googleapis.com. Chỉnh thời gian giữ ở `HOLD=800` (mili giây).
 - Nếu camera lỗi, vẫn dùng được nút bấm dự phòng bên dưới camera.
+
+## Tự chuyển câu
+Sau khi cả hai đội trả lời xong (hoặc hết giờ), máy hiện đáp án và điểm, rồi tự sang câu mới sau 5 giây. Bấm "Câu tiếp theo" để sang ngay, hoặc "Dừng tự chuyển" để dừng lại giải thích. Chỉnh thời gian chờ ở `AU=5` (giây).
