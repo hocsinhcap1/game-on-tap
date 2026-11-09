@@ -23,7 +23,8 @@ Mở `index.html`, tìm mảng `Q`. Mỗi câu có dạng:
 
 ## Chế độ camera
 - Bấm "Bật camera" và cho phép trình duyệt dùng camera. Cần mở bằng https (GitHub Pages) hoặc localhost, dùng Chrome hoặc Edge.
-- Hai bạn đại diện đứng cạnh nhau: Bê vàng bên trái màn hình, Dê trắng bên phải. Đứng xa camera khoảng 2-3 mét để thấy rõ vai và tay.
-- Giơ tay trái = A, tay phải = B, hai tay = C. Giữ yên khoảng 0,8 giây để máy chốt đáp án. Cuối mỗi câu cần hạ tay xuống trước khi sang câu mới.
+- Màn hình chia ba phần: khung camera đội Bê vàng bên trái, câu hỏi ở giữa, khung camera đội Dê trắng bên phải. Chỉ cần một webcam, mỗi khung hiển thị một nửa hình. Hai bạn đứng cạnh nhau, Bê vàng ở nửa trái, Dê trắng ở nửa phải. Mỗi bạn giơ **một tay** gần camera (cách khoảng 1-2 mét), lòng bàn tay hướng về camera.
+- Giơ **1 ngón = A, 2 ngón = B, 3 ngón = C**. Giơ 0, 4, 5 ngón hoặc giơ hai tay là không hợp lệ và máy không chốt đáp án.
+- Giữ yên khoảng 0,8 giây để máy chốt. Cuối mỗi câu cần hạ tay xuống trước khi sang câu mới.
 - Lần đầu cần mạng để tải bộ nhận diện (MediaPipe) từ jsdelivr.net và storage.googleapis.com. Chỉnh thời gian giữ ở `HOLD=800` (mili giây).
 - Nếu camera lỗi, vẫn dùng được nút bấm dự phòng bên dưới camera.

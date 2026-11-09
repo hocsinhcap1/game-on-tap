@@ -10,7 +10,7 @@
 body{margin:0;color:var(--tx);font-family:"Baloo 2","Segoe UI",Roboto,Arial,sans-serif;font-size:18px;background:linear-gradient(var(--sky1),var(--sky2));background-attachment:fixed}
 body:after{content:"";position:fixed;left:0;right:0;bottom:0;height:42px;background:#4fc65a;border-top:5px solid #2ea84a;pointer-events:none}
 .gr{position:fixed;left:0;right:0;bottom:4px;height:40px;display:flex;justify-content:space-around;align-items:center;font-size:28px;z-index:2;pointer-events:none}
-.app{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:10px;height:100vh;padding:8px 14px 50px;max-width:1700px;margin:0 auto}
+.app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:10px;height:100vh;padding:8px 14px 50px;max-width:1700px;margin:0 auto}
 .sb{grid-column:1/-1;display:grid;grid-template-columns:1fr auto 1fr;gap:10px}
 .tm{background:var(--card);border:4px solid;border-radius:24px;padding:4px 14px;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 5px 0 rgba(0,0,0,.18)}
 .tm .av{animation:bn 1.6s ease-in-out infinite;line-height:0}.tm .av svg{width:clamp(48px,9vh,84px);height:auto}
@@ -32,14 +32,14 @@ body:after{content:"";position:fixed;left:0;right:0;bottom:0;height:42px;backgro
 .opts{flex:1;min-height:0;display:grid;grid-auto-rows:1fr;gap:8px}
 .opt{display:flex;gap:14px;align-items:center;padding:4px 14px 4px 8px;border-radius:22px;font-size:clamp(20px,min(3.9vh,2.5vw),40px);font-weight:800;line-height:1.1;border:5px solid;transition:transform .2s}
 .opt.c0{background:var(--ca);border-color:var(--cac)}.opt.c1{background:var(--cb);border-color:var(--cbc)}.opt.c2{background:var(--cc);border-color:var(--ccc)}
-.opt .bd{min-width:clamp(86px,9vw,140px);text-align:center;color:#fff;border-radius:16px;padding:2px 4px;line-height:1}
+.opt .bd{min-width:clamp(70px,7vw,120px);text-align:center;color:#fff;border-radius:16px;padding:2px 4px;line-height:1}
 .c0 .bd{background:var(--cac)}.c1 .bd{background:var(--cbc)}.c2 .bd{background:var(--ccc)}
 .opt .bd i{display:block;font-style:normal;font-size:clamp(28px,5vh,52px)}.opt .bd small{font-size:clamp(12px,1.8vh,18px);font-weight:800}
 .opt.right{box-shadow:0 0 0 7px rgba(18,161,80,.45);transform:scale(1.02);animation:pp2 .7s}.opt.dim{opacity:.35}
 @keyframes pp2{50%{transform:scale(1.06)}}
 .rc{min-height:0;display:flex;flex-direction:column;gap:8px}
 .cam{position:relative;flex:1;min-height:0;background:#1b1536;border:5px solid #fff;border-radius:26px;overflow:hidden;box-shadow:0 6px 0 rgba(0,0,0,.18)}
-.cam video,.cam canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.cam canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.c0{border-color:var(--t1)}.c1{border-color:var(--t2)}.lbw{position:absolute;left:6px;right:6px;bottom:6px}.sm{font-size:clamp(16px,2.6vh,24px);padding:6px 16px}
 .half{position:absolute;top:0;bottom:0;width:50%;border:4px solid;display:flex;flex-direction:column;justify-content:flex-end;padding:6px;pointer-events:none}
 .h0{left:0;border-color:var(--t1)}.h1{right:0;border-color:var(--t2)}
 .lb{background:rgba(20,12,50,.82);color:#fff;border-radius:14px;padding:2px 10px;font-weight:800;font-size:clamp(14px,2.3vh,22px);text-align:center}
@@ -60,25 +60,21 @@ button:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.22)}
 .hero{display:flex;gap:16px}.hero svg{animation:bn 1.6s infinite}.fr{font-size:clamp(30px,5vh,48px);letter-spacing:8px}
 .cf{position:fixed;top:-40px;font-size:38px;z-index:9;pointer-events:none;animation:fl 1.8s ease-in forwards}
 @keyframes fl{to{transform:translateY(110vh) rotate(360deg)}}@keyframes sh{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-@media(max-width:900px),(max-height:520px){.app{display:block;height:auto}.sb{margin-bottom:8px}.cam{aspect-ratio:4/3;margin:8px 0}.ctl{grid-template-columns:1fr}.opts{grid-auto-rows:auto}.tm{flex-direction:column;gap:0}}
+@media(max-width:900px),(max-height:520px){.app{display:block;height:auto}.sb{margin-bottom:8px}.cam{aspect-ratio:4/3;margin:8px 0}.ctl{grid-template-columns:1fr}.qc{order:-1}.opts{grid-auto-rows:auto}.tm{flex-direction:column;gap:0}}
 </style></head><body><div class="app">
 <div class="sb">
 <div class="tm t1"><span class="av" id="a1"></span><div><span class="nm">ĐỘI BÊ VÀNG</span><span class="s" id="s1">0</span></div></div>
 <div class="tm mid"><span id="no" class="meta">Câu 0/22</span><div class="ring" id="rg"><span id="clk">30</span></div></div>
 <div class="tm t2"><span class="av" id="a2"></span><div><span class="nm">ĐỘI DÊ TRẮNG</span><span class="s" id="s2">0</span></div></div>
 </div>
+<div class="rc"><div class="cam c0"><canvas id="cv0"></canvas><div class="lbw"><div class="lb" id="l0">🐮 Bê vàng</div><div class="pg"><i id="p0"></i></div></div><div class="cmsg" id="cm0"><div style="font-size:clamp(14px,2.2vh,22px)">📷 Bạn đại diện đội<br>🐮 Bê vàng<br>đứng ở khung này</div><button class="big sm" onclick="startCam()">📷 Bật camera</button><div class="meta" style="color:#d6ccf5" id="cn0">Hoặc dùng nút bấm bên dưới</div></div></div><div class="ctl" id="ctl0"></div></div>
 <div class="qc"><div id="main"></div></div>
-<div class="rc">
-<div class="cam"><video id="v" playsinline muted></video><canvas id="cv"></canvas>
-<div class="half h0"><div class="lb" id="l0">🐮 Bê vàng</div><div class="pg"><i id="p0"></i></div></div>
-<div class="half h1"><div class="lb" id="l1">🐐 Dê trắng</div><div class="pg"><i id="p1"></i></div></div>
-<div class="cmsg" id="cmsg"><div style="font-size:clamp(16px,2.6vh,24px)">📷 Hai bạn đại diện đứng cạnh nhau trước camera:<br>🐮 Bê vàng bên trái · 🐐 Dê trắng bên phải</div><button class="big" onclick="startCam()">📷 Bật camera</button><div class="meta" style="color:#d6ccf5" id="cnote">Hoặc dùng các nút bấm bên dưới</div></div></div>
-<div class="ctl" id="ctl"></div>
-</div></div>
+<div class="rc"><div class="cam c1"><canvas id="cv1"></canvas><div class="lbw"><div class="lb" id="l1">🐐 Dê trắng</div><div class="pg"><i id="p1"></i></div></div><div class="cmsg" id="cm1"><div style="font-size:clamp(14px,2.2vh,22px)">📷 Bạn đại diện đội<br>🐐 Dê trắng<br>đứng ở khung này</div><button class="big sm" onclick="startCam()">📷 Bật camera</button><div class="meta" style="color:#d6ccf5" id="cn1">Hoặc dùng nút bấm bên dưới</div></div></div><div class="ctl" id="ctl1"></div></div>
+<video id="v" playsinline muted style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none"></video>
 <div class="gr"><span>🌳</span><span>🌼</span><span>🍎</span><span>🐰</span><span>🌷</span><span>🍓</span><span>🌳</span><span>🦋</span><span>🍌</span><span>🐿️</span><span>🌻</span><span>🌳</span></div>
 <script>
 var TL=30,B=50,P=100,HOLD=800;
-var A=[["✋","Tay trái"],["🤚","Tay phải"],["🙌","Hai tay"]];
+var A=[["☝️","1 ngón"],["✌️","2 ngón"],["🤟","3 ngón"]];
 function eyes(){return '<circle cx="36" cy="50" r="8" fill="#2b2140"/><circle cx="64" cy="50" r="8" fill="#2b2140"/><circle cx="33.5" cy="47" r="3" fill="#fff"/><circle cx="61.5" cy="47" r="3" fill="#fff"/><ellipse cx="24" cy="62" rx="6" ry="4" fill="#ff7b9c" opacity=".7"/><ellipse cx="76" cy="62" rx="6" ry="4" fill="#ff7b9c" opacity=".7"/>'}
 function calf(s){return '<svg viewBox="0 0 100 100" width="'+s+'" height="'+s+'"><ellipse cx="13" cy="42" rx="13" ry="7" transform="rotate(-25 13 42)" fill="#f08a24"/><ellipse cx="87" cy="42" rx="13" ry="7" transform="rotate(25 87 42)" fill="#f08a24"/><path d="M30 22Q26 6 37 9Q39 18 39 24ZM70 22Q74 6 63 9Q61 18 61 24Z" fill="#ffe27a" stroke="#c98f00" stroke-width="2"/><circle cx="50" cy="52" r="35" fill="#ffa94d" stroke="#c75a0f" stroke-width="3"/><ellipse cx="50" cy="68" rx="19" ry="13" fill="#ffe3bf"/><circle cx="43" cy="67" r="2.5" fill="#8a4a1a"/><circle cx="57" cy="67" r="2.5" fill="#8a4a1a"/>'+eyes()+'<path d="M43 75Q50 82 57 75" fill="none" stroke="#8a4a1a" stroke-width="2.5" stroke-linecap="round"/></svg>'}
 function goat(s){return '<svg viewBox="0 0 100 100" width="'+s+'" height="'+s+'"><ellipse cx="12" cy="48" rx="14" ry="7" transform="rotate(20 12 48)" fill="#ffc2d6" stroke="#8d86b8" stroke-width="2.5"/><ellipse cx="88" cy="48" rx="14" ry="7" transform="rotate(-20 88 48)" fill="#ffc2d6" stroke="#8d86b8" stroke-width="2.5"/><path d="M34 22Q22 4 38 6M66 22Q78 4 62 6" fill="none" stroke="#ffb703" stroke-width="7" stroke-linecap="round"/><circle cx="50" cy="52" r="35" fill="#fff" stroke="#8d86b8" stroke-width="3"/><ellipse cx="50" cy="68" rx="17" ry="12" fill="#efe9ff"/><ellipse cx="50" cy="62" rx="4" ry="3" fill="#ff8fab"/>'+eyes()+'<path d="M43 71Q50 78 57 71" fill="none" stroke="#6b5f9a" stroke-width="2.5" stroke-linecap="round"/><path d="M50 82Q46 95 50 97Q54 95 50 82Z" fill="#fff" stroke="#8d86b8" stroke-width="2"/></svg>'}
@@ -110,11 +106,11 @@ var i=-1,sc=[0,0],ch=[null,null],tt=[0,0],t0=0,iv=null,rev=false,run=false,ac=nu
 var m=document.getElementById("main"),clk=document.getElementById("clk"),rg=document.getElementById("rg");
 function $(x){return document.getElementById(x)}
 $("a1").innerHTML=calf(78);$("a2").innerHTML=goat(78);
-(function(){var h="";for(var t=0;t<2;t++){h+='<div class="pn t'+(t+1)+'"><h3>'+(t?'🐐 Dê trắng':'🐮 Bê vàng')+' – nút bấm dự phòng</h3><div class="b">';for(var k=0;k<3;k++)h+='<button id="b'+t+k+'" disabled onclick="pick('+t+','+k+')">'+A[k][0]+'</button>';h+='<button id="rs'+t+'" disabled onclick="undo('+t+')" title="Chọn lại">↺</button></div><div class="st" id="st'+t+'"></div></div>'}$("ctl").innerHTML=h})();
+(function(){for(var t=0;t<2;t++){var h='<div class="pn t'+(t+1)+'"><h3>Nút bấm dự phòng</h3><div class="b">';for(var k=0;k<3;k++)h+='<button id="b'+t+k+'" disabled onclick="pick('+t+','+k+')">'+A[k][0]+'</button>';h+='<button id="rs'+t+'" disabled onclick="undo('+t+')" title="Chọn lại">↺</button></div><div class="st" id="st'+t+'"></div></div>';$("ctl"+t).innerHTML=h}})();
 function snd(f,d){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();var o=ac.createOscillator(),g=ac.createGain();o.frequency.value=f;g.gain.value=.12;o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch(e){}}
 function boom(em){for(var k=0;k<24;k++){var s=document.createElement("span");s.className="cf";s.textContent=em[k%em.length];s.style.left=(Math.random()*96)+"vw";s.style.animationDelay=(Math.random()*.5)+"s";document.body.appendChild(s);setTimeout(function(x){x.remove()},2600,s)}}
 function start(){
- m.innerHTML='<div class="card c"><div class="hero">'+calf(130)+goat(130)+'</div><div class="fr">🍎🍊🍓🍌🍇</div><div class="q">Cùng ôn bài “Gọi bạn” nào!</div><p class="meta" style="font-size:clamp(18px,3vh,30px);margin:0">✋ Tay trái = <b>A</b> · 🤚 Tay phải = <b>B</b> · 🙌 Hai tay = <b>C</b></p><p class="meta" style="margin:0">22 câu · mỗi lượt một bạn đại diện · đúng 100 điểm + thưởng tốc độ tối đa 50 · '+TL+' giây/câu</p><div class="act"><button class="big" onclick="snd(660,.15);next()">▶ Bắt đầu</button></div></div>';
+ m.innerHTML='<div class="card c"><div class="hero">'+calf(130)+goat(130)+'</div><div class="fr">🍎🍊🍓🍌🍇</div><div class="q">Cùng ôn bài “Gọi bạn” nào!</div><p class="meta" style="font-size:clamp(18px,3vh,30px);margin:0">☝️ 1 ngón = <b>A</b> · ✌️ 2 ngón = <b>B</b> · 🤟 3 ngón = <b>C</b></p><p class="meta" style="margin:0">Bấm “Bật camera” ở khung bên cạnh trước khi bắt đầu · 22 câu · mỗi lượt một bạn giơ 1 tay, chỉ 1–3 ngón là hợp lệ · đúng 100 điểm + thưởng tốc độ tối đa 50 · '+TL+' giây/câu</p><div class="act"><button class="big" onclick="snd(660,.15);next()">▶ Bắt đầu</button></div></div>';
 }
 function next(){
  i++;if(i>=Q.length){return end()}
@@ -168,44 +164,48 @@ function end(){
  m.innerHTML='<div class="card c"><div class="hero">'+calf(110)+'<span style="font-size:100px;line-height:1">🏆</span>'+goat(110)+'</div><div class="q">'+w+'</div><p style="font-size:clamp(22px,4vh,38px);font-weight:800;margin:0">🐮 Bê vàng: <b>'+sc[0]+'</b> · 🐐 Dê trắng: <b>'+sc[1]+'</b> điểm</p><p class="meta" style="margin:0">Cả hai đội đều là những người bạn tuyệt vời! 💛</p><div class="act"><button class="big" onclick="location.reload()">🔄 Chơi lại</button></div></div>';
  boom(["🏆","⭐","🎉","🎈","🌸","🍎"]);snd(784,.2);setTimeout(function(){snd(1047,.4)},220);
 }
-/* ===== Camera: nhận diện giơ tay bằng MediaPipe Pose ===== */
-var cam=false,pl=null,wait=[true,true],hd=[{s:-9,t:0},{s:-9,t:0}],lastT=-1,lastRun=0,V=$("v"),CV=$("cv");
-var NM=["Tay trái (A)","Tay phải (B)","Hai tay (C)"];
+/* ===== Camera: đếm ngón tay bằng MediaPipe Hand Landmarker ===== */
+var cam=false,hl=null,wait=[true,true],hd=[{s:-9,t:0},{s:-9,t:0}],lastT=-1,lastRun=0,V=$("v");
+var NM=["1 ngón (A)","2 ngón (B)","3 ngón (C)"];
+function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+function fingers(p){var n=0,w=p[0];[[8,6],[12,10],[16,14],[20,18]].forEach(function(f){if(dist(w,p[f[0]])>dist(w,p[f[1]])*1.1)n++});if(dist(p[4],p[17])>dist(p[2],p[17])*1.2)n++;return n}
+function note(x){$("cn0").textContent=x;$("cn1").textContent=x}
+function camBtn(d,x){document.querySelectorAll(".cmsg button").forEach(function(b){b.disabled=d;if(x)b.textContent=x})}
 async function startCam(){
- var n=$("cnote"),b=$("cmsg").querySelector("button");b.disabled=true;
+ camBtn(true);
  try{
-  n.textContent="Đang bật camera…";
+  note("Đang bật camera…");
   V.srcObject=await navigator.mediaDevices.getUserMedia({video:{width:640,height:480,facingMode:"user"},audio:false});await V.play();
-  n.textContent="Đang tải bộ nhận diện (lần đầu mất vài giây)…";
+  note("Đang tải bộ nhận diện (lần đầu mất vài giây)…");
   var M=await import("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/+esm");
   var fs=await M.FilesetResolver.forVisionTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm");
-  var mk=function(d){return M.PoseLandmarker.createFromOptions(fs,{baseOptions:{modelAssetPath:"https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task",delegate:d},runningMode:"VIDEO",numPoses:2})};
-  try{pl=await mk("GPU")}catch(e){pl=await mk("CPU")}
-  cam=true;$("cmsg").style.display="none";requestAnimationFrame(loop);
- }catch(e){b.disabled=false;b.textContent="📷 Thử lại";n.textContent="Chưa bật được camera. Hãy cho phép dùng camera và mở trang bằng https, hoặc dùng nút bấm dự phòng."}
+  var mk=function(d){return M.HandLandmarker.createFromOptions(fs,{baseOptions:{modelAssetPath:"https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",delegate:d},runningMode:"VIDEO",numHands:4})};
+  try{hl=await mk("GPU")}catch(e){hl=await mk("CPU")}
+  cam=true;$("cm0").style.display="none";$("cm1").style.display="none";requestAnimationFrame(loop);
+ }catch(e){camBtn(false,"📷 Thử lại");note("Chưa bật được camera. Hãy cho phép dùng camera và mở trang bằng https, hoặc dùng nút bấm bên dưới.")}
 }
-function arm(p){var ls=p[11],rs=p[12];if(ls.visibility<.3||rs.visibility<.3)return -1;
- var L=p[15].y<ls.y-.04,R=p[16].y<rs.y-.04;return L&&R?2:L?0:R?1:-1}
 function loop(){
  if(!cam)return;requestAnimationFrame(loop);
  if(V.readyState<2||V.currentTime===lastT)return;var now=performance.now();if(now-lastRun<66)return;lastRun=now;lastT=V.currentTime;
- var r=pl.detectForVideo(V,now),best=[null,null],w=[0,0];
- CV.width=V.videoWidth;CV.height=V.videoHeight;var cx=CV.getContext("2d");cx.clearRect(0,0,CV.width,CV.height);
- (r.landmarks||[]).forEach(function(p){
-  var c=(p[11].x+p[12].x)/2,t=(1-c)<.5?0:1,sw=Math.abs(p[11].x-p[12].x);
-  if(sw>w[t]){w[t]=sw;best[t]=p}
- });
+ var r=hl.detectForVideo(V,now),hs=[[],[]],VW=V.videoWidth,VH=V.videoHeight,w=VW/2;
+ (r.landmarks||[]).forEach(function(p){hs[(1-p[9].x)<.5?0:1].push(p)});
  for(var t=0;t<2;t++){
-  var p=best[t],s=p?arm(p):-2,d=Date.now();
-  if(p)[11,12,15,16].forEach(function(k){cx.beginPath();cx.arc(p[k].x*CV.width,p[k].y*CV.height,k>14?14:8,0,7);cx.fillStyle=k>14?(arm(p)>=0?"#ffd23f":"#fff"):"#7fd4ff";cx.fill()});
+  var s=-2,n=0,d=Date.now();
+  if(hs[t].length>1)s=-3;
+  else if(hs[t].length==1){n=fingers(hs[t][0]);s=(n>=1&&n<=3)?n-1:-4}
+  var c=$("cv"+t),sx=t==0?w:0,cx;c.width=w;c.height=VH;cx=c.getContext("2d");
+  cx.save();cx.translate(w,0);cx.scale(-1,1);cx.drawImage(V,sx,0,w,VH,0,0,w,VH);
+  hs[t].forEach(function(p){p.forEach(function(q,k){cx.beginPath();cx.arc(q.x*VW-sx,q.y*VH,[4,8,12,16,20].indexOf(k)>=0?9:5,0,7);cx.fillStyle=s>=0?"#ffd23f":"#ff5a6e";cx.fill()})});
+  cx.restore();
   if(s!==hd[t].s){hd[t].s=s;hd[t].t=d}
   if(s<0)wait[t]=false;
   var txt="",pct=0;
-  if(s===-2)txt="Chưa thấy bạn";
+  if(s===-2)txt=ch[t]!==null?"✅ Đã chọn "+"ABC".charAt(ch[t]):"Chưa thấy tay";
+  else if(s===-3)txt="⚠️ Chỉ giơ một tay thôi";
+  else if(s===-4)txt="⚠️ Không hợp lệ ("+n+" ngón)";
   else if(ch[t]!==null)txt="✅ Đã chọn "+"ABC".charAt(ch[t]);
-  else if(!run||rev)txt=s>=0?"Đang thấy: "+NM[s]:"Sẵn sàng";
-  else if(wait[t]&&s>=0)txt="Hạ tay xuống nhé";
-  else if(s<0)txt="Giơ tay để chọn";
+  else if(!run||rev)txt="Đang thấy: "+NM[s];
+  else if(wait[t])txt="Hạ tay xuống nhé";
   else{pct=Math.min(1,(d-hd[t].t)/HOLD);txt=A[s][0]+" "+NM[s]+" – giữ yên…";if(pct>=1)pick(t,s,hd[t].t)}
   $("l"+t).textContent=(t?"🐐 ":"🐮 ")+txt;$("p"+t).style.width=(pct*100)+"%";
  }
