@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ôn tập: Gọi bạn</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap">
+<style>
+:root{--sky1:#7fd4ff;--sky2:#d8f4ff;--card:#fff;--tx:#241a4a;--mu:#5b4f85;--bd:#ffb703;--t1:#ff7a00;--t1b:#fff1d6;--t2:#1b8cff;--t2b:#dcefff;--ok:#12a150;--bad:#e5334b;--ca:#ffd9ea;--cac:#ff4f93;--cb:#fff2a6;--cbc:#f2a900;--cc:#c9f5d6;--ccc:#1db954;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky1:#1c3a7a;--sky2:#35296b;--card:#2a2656;--tx:#fffaf0;--mu:#d6ccf5;--t1b:#4d3520;--t2b:#1f3a63;--ca:#5c2f52;--cb:#5b5224;--cc:#24533c}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--tx);font-family:"Baloo 2","Segoe UI",Roboto,Arial,sans-serif;font-size:clamp(18px,2vw,26px);background:linear-gradient(var(--sky1),var(--sky2));background-attachment:fixed;overflow-x:hidden}
+body:before{content:"☀️";position:fixed;top:6px;right:14px;font-size:54px;pointer-events:none}
+body:after{content:"";position:fixed;left:0;right:0;bottom:0;height:56px;background:#4fc65a;border-top:6px solid #2ea84a;pointer-events:none}
+.gr{position:fixed;left:0;right:0;bottom:4px;height:56px;display:flex;justify-content:space-around;align-items:center;font-size:36px;z-index:2;pointer-events:none}
+.w{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:10px 14px 80px}
+h1{margin:0 0 8px;text-align:center;font-size:clamp(26px,3.2vw,42px);font-weight:800;color:#fff;text-shadow:0 3px 0 #1d6fb8,0 0 12px #1d6fb8}
+.sb{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch}
+.tm{background:var(--card);border:5px solid;border-radius:28px;padding:6px 14px;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 6px 0 rgba(0,0,0,.18)}
+.tm .av{animation:bn 1.6s ease-in-out infinite}
+.tm .nm{font-size:clamp(16px,1.9vw,26px);font-weight:800;line-height:1.1}
+.tm .s{display:block;font-size:clamp(40px,5vw,66px);font-weight:800;line-height:1}
+.s.pop{animation:pp .6s}
+@keyframes bn{50%{transform:translateY(-7px) rotate(-5deg)}}
+@keyframes pp{40%{transform:scale(1.5)}}
+.t1{border-color:var(--t1);background:var(--t1b)}.t1 .nm,.t1 .s{color:var(--t1)}.t2{border-color:var(--t2);background:var(--t2b)}.t2 .nm,.t2 .s{color:var(--t2)}
+.mid{flex-direction:column;gap:0;min-width:130px;border-color:var(--bd);padding:6px 12px}
+.ring{--p:100;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--ok) calc(var(--p)*1%),#e3dcf5 0)}
+.ring span{width:74px;height:74px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:40px;font-weight:800}
+.ring.lo{background:conic-gradient(var(--bad) calc(var(--p)*1%),#e3dcf5 0);animation:sh .4s infinite}
+.meta{font-size:clamp(15px,1.6vw,22px);color:var(--mu);font-weight:700}
+.card{background:var(--card);border:5px solid var(--bd);border-radius:30px;padding:14px 22px 18px;margin-top:12px;box-shadow:0 7px 0 rgba(0,0,0,.18)}
+.badge{display:inline-block;background:var(--bd);color:#3a2700;border-radius:22px;padding:0 16px;font-weight:800;font-size:clamp(17px,1.9vw,26px)}
+.q{font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.2;margin:8px 0 4px}
+.opt{display:flex;gap:16px;align-items:center;padding:8px 16px 8px 10px;margin-top:10px;border-radius:24px;font-size:clamp(23px,3.1vw,40px);font-weight:800;line-height:1.15;border:5px solid;transition:transform .2s}
+.opt.c0{background:var(--ca);border-color:var(--cac)}.opt.c1{background:var(--cb);border-color:var(--cbc)}.opt.c2{background:var(--cc);border-color:var(--ccc)}
+.opt .bd{min-width:clamp(96px,11vw,150px);text-align:center;color:#fff;border-radius:18px;padding:2px 6px;line-height:1}
+.c0 .bd{background:var(--cac)}.c1 .bd{background:var(--cbc)}.c2 .bd{background:var(--ccc)}
+.opt .bd i{display:block;font-style:normal;font-size:clamp(34px,4.2vw,56px)}.opt .bd small{font-size:clamp(13px,1.4vw,19px);font-weight:800}
+.opt.right{box-shadow:0 0 0 8px rgba(18,161,80,.45);transform:scale(1.03);animation:pp2 .7s}
+.opt.dim{opacity:.35}
+@keyframes pp2{50%{transform:scale(1.08)}}
+.ctl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.pn{border:5px solid;border-radius:26px;padding:10px 12px;box-shadow:0 6px 0 rgba(0,0,0,.18)}
+.pn h3{margin:0 0 8px;font-size:clamp(17px,1.9vw,26px)}
+.pn .b{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+button{font:inherit;font-weight:800;cursor:pointer;border-radius:20px;border:0;background:#fff;color:#241a4a;padding:8px 4px;box-shadow:0 6px 0 rgba(0,0,0,.22);transition:transform .1s}
+button:active{transform:translateY(5px);box-shadow:0 1px 0 rgba(0,0,0,.22)}
+.pn .b button{min-height:84px;font-size:clamp(34px,4vw,52px);line-height:1}.pn .b button small{display:block;font-size:clamp(18px,2vw,26px)}
+.pn .b button.sel{background:#ffd23f;outline:5px solid #241a4a}
+.pn button:disabled{opacity:.55;cursor:default}
+.st{min-height:34px;margin-top:6px;font-size:clamp(17px,2vw,27px);font-weight:800}.ok{color:var(--ok)}.no{color:var(--bad)}
+.act{display:flex;gap:12px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.big{background:linear-gradient(#ff9a3c,#ff5e3a);color:#fff;font-size:clamp(24px,3vw,38px);padding:12px 40px;border-radius:34px}
+.alt{font-size:clamp(20px,2.4vw,30px);padding:12px 30px;border-radius:30px;background:#ffd23f}
+.c{text-align:center}.hero{display:flex;justify-content:center;gap:20px}.hero svg{animation:bn 1.6s infinite}.fr{font-size:clamp(34px,4vw,54px);letter-spacing:10px}
+.cf{position:fixed;top:-40px;font-size:38px;z-index:9;pointer-events:none;animation:fl 1.8s ease-in forwards}
+@keyframes fl{to{transform:translateY(110vh) rotate(360deg)}}
+@keyframes sh{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@media(max-width:700px){.ctl{grid-template-columns:1fr}.tm{flex-direction:column;gap:0}.tm .av{width:48px;height:48px}.mid{min-width:96px}.ring{width:72px;height:72px}.ring span{width:54px;height:54px;font-size:28px}}
+</style></head><body><div class="w">
+<h1>🌳 Gọi bạn · Ôn tập Tiếng Việt 🌳</h1>
+<div class="sb">
+<div class="tm t1"><span class="av" id="a1"></span><div><span class="nm">ĐỘI<br>BÊ VÀNG</span><span class="s" id="s1">0</span></div></div>
+<div class="tm mid"><span id="no" class="meta">Câu 0/22</span><div class="ring" id="rg"><span id="clk">30</span></div></div>
+<div class="tm t2"><span class="av" id="a2"></span><div><span class="nm">ĐỘI<br>DÊ TRẮNG</span><span class="s" id="s2">0</span></div></div>
+</div>
+<div id="main"></div>
+</div>
+<div class="gr"><span>🌳</span><span>🌼</span><span>🍎</span><span>🐰</span><span>🌷</span><span>🍓</span><span>🌳</span><span>🦋</span><span>🍌</span><span>🐿️</span><span>🌻</span><span>🌳</span></div>
+<script>
+var TL=30,B=50,P=100;
+var A=[["✋","Tay trái"],["🤚","Tay phải"],["🙌","Hai tay"]];
+function eyes(){return '<circle cx="36" cy="50" r="8" fill="#2b2140"/><circle cx="64" cy="50" r="8" fill="#2b2140"/><circle cx="33.5" cy="47" r="3" fill="#fff"/><circle cx="61.5" cy="47" r="3" fill="#fff"/><ellipse cx="24" cy="62" rx="6" ry="4" fill="#ff7b9c" opacity=".7"/><ellipse cx="76" cy="62" rx="6" ry="4" fill="#ff7b9c" opacity=".7"/>'}
+function calf(s){return '<svg viewBox="0 0 100 100" width="'+s+'" height="'+s+'"><ellipse cx="13" cy="42" rx="13" ry="7" transform="rotate(-25 13 42)" fill="#f08a24"/><ellipse cx="87" cy="42" rx="13" ry="7" transform="rotate(25 87 42)" fill="#f08a24"/><path d="M30 22Q26 6 37 9Q39 18 39 24ZM70 22Q74 6 63 9Q61 18 61 24Z" fill="#ffe27a" stroke="#c98f00" stroke-width="2"/><circle cx="50" cy="52" r="35" fill="#ffa94d" stroke="#c75a0f" stroke-width="3"/><ellipse cx="50" cy="68" rx="19" ry="13" fill="#ffe3bf"/><circle cx="43" cy="67" r="2.5" fill="#8a4a1a"/><circle cx="57" cy="67" r="2.5" fill="#8a4a1a"/>'+eyes()+'<path d="M43 75Q50 82 57 75" fill="none" stroke="#8a4a1a" stroke-width="2.5" stroke-linecap="round"/></svg>'}
+function goat(s){return '<svg viewBox="0 0 100 100" width="'+s+'" height="'+s+'"><ellipse cx="12" cy="48" rx="14" ry="7" transform="rotate(20 12 48)" fill="#ffc2d6" stroke="#8d86b8" stroke-width="2.5"/><ellipse cx="88" cy="48" rx="14" ry="7" transform="rotate(-20 88 48)" fill="#ffc2d6" stroke="#8d86b8" stroke-width="2.5"/><path d="M34 22Q22 4 38 6M66 22Q78 4 62 6" fill="none" stroke="#ffb703" stroke-width="7" stroke-linecap="round"/><circle cx="50" cy="52" r="35" fill="#fff" stroke="#8d86b8" stroke-width="3"/><ellipse cx="50" cy="68" rx="17" ry="12" fill="#efe9ff"/><ellipse cx="50" cy="62" rx="4" ry="3" fill="#ff8fab"/>'+eyes()+'<path d="M43 71Q50 78 57 71" fill="none" stroke="#6b5f9a" stroke-width="2.5" stroke-linecap="round"/><path d="M50 82Q46 95 50 97Q54 95 50 82Z" fill="#fff" stroke="#8d86b8" stroke-width="2"/></svg>'}
+var Q=[
+["Bài thơ có tên là gì?",["Gọi bạn","Tìm bạn","Nhớ bạn"],0],
+["Tác giả bài thơ là ai?",["Võ Quảng","Trần Đăng Khoa","Định Hải"],2],
+["Đôi bạn trong bài thơ là ai?",["Sóc và thỏ","Bê vàng và dê trắng","Bê vàng và nhím"],1],
+["Đôi bạn sống ở đâu?",["Trong rừng xanh","Bên bờ biển","Trong thành phố"],0],
+["Câu chuyện xảy ra khi nào?",["Mùa xuân","Một năm hạn hán","Mùa đông"],1],
+["“Sâu thẳm” nghĩa là gì?",["Rất cao","Rất rộng","Rất sâu"],2],
+["“Hạn hán” là gì?",["Lâu ngày không mưa","Mưa nhiều gây lụt","Gió to, bão lớn"],0],
+["“Lang thang” nghĩa là gì?",["Đi thẳng về nhà","Đi hết nơi này đến nơi khác","Ngồi yên một chỗ"],1],
+["Khi hạn hán, suối và cỏ thế nào?",["Suối đầy, cỏ xanh","Suối chảy mạnh","Suối cạn, cỏ héo khô"],2],
+["Vì sao bê vàng đi tìm cỏ?",["Cỏ héo khô, hết thức ăn","Thích đi chơi","Muốn tìm bạn mới"],0],
+["Bê vàng đi tìm cỏ thì gặp chuyện gì?",["Gặp mưa to","Quên đường về","Bị ốm"],1],
+["Bê vàng quên đường về, dê trắng làm gì?",["Ở nhà ngủ","Đi tìm cỏ khác","Chạy khắp nẻo tìm bê"],2],
+["Dê trắng vẫn gọi hoài thế nào?",["“Bê! Bê!”","“Dê! Dê!”","“Bạn ơi!”"],0],
+["Tâm trạng của dê trắng khi không thấy bạn?",["Vui vẻ","Thương bạn","Giận dữ"],1],
+["Dê trắng là người bạn thế nào?",["Lười biếng","Không quan tâm","Rất yêu thương bạn"],2],
+["Em an ủi dê trắng thế nào?",["Đừng buồn, cùng tìm bê nhé!","Mặc kệ đi!","Bạn đáng bị thế!"],0],
+["Bài thơ khuyên em điều gì?",["Chỉ chơi một mình","Yêu thương bạn bè","Không cần bạn bè"],1],
+["Điền từ: “Suối cạn, cỏ héo …”",["xanh","vàng","khô"],2],
+["Điền từ: “Chạy khắp … tìm bê”",["nẻo","chỗ","nhà"],0],
+["Câu ứng dụng nào viết đúng?",["Học thầy không tày học bạn.","học thầy không tày học bạn.","Học thầy không tài học bạn."],0],
+["Câu “Học thầy không tày học bạn” khuyên gì?",["Chỉ học thầy cô","Học hỏi cả từ bạn bè","Không cần đi học"],1],
+["Chữ hoa đầu câu ứng dụng là chữ nào?",["K","N","H"],2]
+];
+var i=-1,sc=[0,0],ch=[null,null],tt=[0,0],t0=0,iv=null,rev=false,run=false,ac=null;
+var m=document.getElementById("main"),clk=document.getElementById("clk"),rg=document.getElementById("rg");
+function $(x){return document.getElementById(x)}
+$("a1").innerHTML=calf(78);$("a2").innerHTML=goat(78);
+function snd(f,d){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();var o=ac.createOscillator(),g=ac.createGain();o.frequency.value=f;g.gain.value=.12;o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch(e){}}
+function boom(em){for(var k=0;k<24;k++){var s=document.createElement("span");s.className="cf";s.textContent=em[k%em.length];s.style.left=(Math.random()*96)+"vw";s.style.animationDelay=(Math.random()*.5)+"s";document.body.appendChild(s);setTimeout(function(x){x.remove()},2600,s)}}
+function start(){
+ m.innerHTML='<div class="card c"><div class="hero">'+calf(150)+goat(150)+'</div><div class="fr">🍎🍊🍓🍌🍇</div><div class="q">Cùng ôn bài với Bê vàng và Dê trắng nào!</div><p class="meta" style="font-size:clamp(20px,2.4vw,32px)">✋ Tay trái = <b>A</b> &nbsp;·&nbsp; 🤚 Tay phải = <b>B</b> &nbsp;·&nbsp; 🙌 Hai tay = <b>C</b></p><p class="meta">22 câu · mỗi lượt một bạn đại diện · đúng 100 điểm + thưởng tốc độ tối đa 50 · '+TL+' giây/câu</p><div class="act"><button class="big" onclick="snd(660,.15);next()">▶ Bắt đầu</button></div></div>';
+}
+function next(){
+ i++;if(i>=Q.length){return end()}
+ ch=[null,null];tt=[0,0];rev=false;run=true;t0=Date.now();
+ var q=Q[i],rep=Math.ceil((i+1)/2);
+ $("no").textContent="Câu "+(i+1)+"/22";
+ var h='<div class="card"><span class="badge">⭐ Lượt của bạn số '+rep+'</span><div class="q">'+q[0]+'</div>';
+ for(var k=0;k<3;k++)h+='<div class="opt c'+k+'" id="o'+k+'"><div class="bd"><i>'+A[k][0]+'</i><small>'+"ABC".charAt(k)+' · '+A[k][1]+'</small></div><span>'+q[1][k]+'</span></div>';
+ h+='</div><div class="ctl">';
+ for(var t=0;t<2;t++){h+='<div class="pn t'+(t+1)+'" style="background:var(--card)"><h3>'+(t?'🐐 Dê trắng':'🐮 Bê vàng')+' – bấm khi bạn chọn xong</h3><div class="b">';
+  for(var k=0;k<3;k++)h+='<button id="b'+t+k+'" onclick="pick('+t+','+k+')">'+A[k][0]+'<small>'+"ABC".charAt(k)+'</small></button>';
+  h+='</div><div class="st" id="st'+t+'"></div><button style="font-size:16px;padding:4px 14px" id="rs'+t+'" onclick="undo('+t+')">↺ Chọn lại</button></div>'}
+ h+='</div><div class="act"><button class="alt" id="rv" onclick="reveal()">👀 Hiện đáp án</button><button id="nx" class="big" style="display:none" onclick="next()">'+(i==Q.length-1?"🏆 Xem kết quả":"Câu tiếp theo ▶")+'</button></div>';
+ m.innerHTML=h;
+ clearInterval(iv);iv=setInterval(tick,100);tick();
+}
+function tick(){
+ if(!run)return;var l=Math.max(0,TL-(Date.now()-t0)/1000);
+ clk.textContent=Math.ceil(l);rg.style.setProperty("--p",l/TL*100);rg.className="ring"+(l<=8?" lo":"");
+ if(l<=0)reveal();
+}
+function pick(t,k){
+ if(rev||ch[t]!==null)return;
+ ch[t]=k;tt[t]=Math.min(TL,(Date.now()-t0)/1000);snd(520,.08);
+ $("b"+t+k).className="sel";
+ for(var j=0;j<3;j++)$("b"+t+j).disabled=true;
+ $("st"+t).textContent="Đã chọn "+"ABC".charAt(k)+" sau "+tt[t].toFixed(1)+" giây";
+ if(ch[0]!==null&&ch[1]!==null)reveal();
+}
+function undo(t){
+ if(rev||ch[t]===null)return;
+ ch[t]=null;for(var j=0;j<3;j++){$("b"+t+j).disabled=false;$("b"+t+j).className=""}
+ $("st"+t).textContent="";
+}
+function reveal(){
+ if(rev)return;rev=true;run=false;clearInterval(iv);rg.className="ring";
+ var c=Q[i][2],any=false;
+ for(var k=0;k<3;k++)$("o"+k).className+=(k==c?" right":" dim");
+ for(var t=0;t<2;t++){
+  var s=$("st"+t),g=0;
+  for(var j=0;j<3;j++)$("b"+t+j).disabled=true;
+  $("rs"+t).disabled=true;
+  if(ch[t]===null){s.innerHTML='<span class="no">⏰ Hết giờ: +0 điểm</span>'}
+  else if(ch[t]===c){var bn=Math.round(B*(TL-tt[t])/TL);g=P+bn;any=true;s.innerHTML='<span class="ok">🎉 Giỏi quá! +'+g+' điểm</span> ('+P+' + thưởng '+bn+')'}
+  else{s.innerHTML='<span class="no">💪 Cố lên nhé! +0 điểm</span>'}
+  sc[t]+=g;var e=$("s"+(t+1));e.textContent=sc[t];if(g){e.classList.remove("pop");void e.offsetWidth;e.classList.add("pop")}
+ }
+ if(any){snd(880,.15);setTimeout(function(){snd(1175,.25)},160);boom(["⭐","🎈","🌸","🍓","🎉"])}else snd(200,.3);
+ $("rv").style.display="none";$("nx").style.display="inline-block";
+}
+function end(){
+ clk.textContent="🏁";rg.style.setProperty("--p",100);
+ var w=sc[0]==sc[1]?"Hai đội hòa nhau, cùng giỏi lắm!":(sc[0]>sc[1]?"🐮 Đội Bê vàng":"🐐 Đội Dê trắng")+" chiến thắng!";
+ m.innerHTML='<div class="card c"><div class="hero">'+calf(120)+'<span style="font-size:110px">🏆</span>'+goat(120)+'</div><div class="q">'+w+'</div><p style="font-size:clamp(24px,3vw,40px);font-weight:800">🐮 Bê vàng: <b>'+sc[0]+'</b> điểm &nbsp;·&nbsp; 🐐 Dê trắng: <b>'+sc[1]+'</b> điểm</p><p class="meta">Cả hai đội đều là những người bạn tuyệt vời! 💛</p><div class="act"><button class="big" onclick="location.reload()">🔄 Chơi lại</button></div></div>';
+ boom(["🏆","⭐","🎉","🎈","🌸","🍎"]);snd(784,.2);setTimeout(function(){snd(1047,.4)},220);
+}
+start();
+</script></body></html>
